@@ -66,9 +66,21 @@ pip install torch transformers flask pandas scikit-learn
 
 ## Usage
 
-### Training the Model
+**Note:** The pre-trained model weights are already provided in the repository via Git LFS. You do **not** need to train the model to run predictions or the web application. You can use it right out of the box!
 
-Train the model using the standard training script:
+### Running the Web Application
+
+Start the Flask web server:
+
+```bash
+python webapp/app.py
+```
+
+Then open your browser and navigate to `http://localhost:5000`
+
+### Optional: Training the Model
+
+If you wish to fine-tune the model on your own dataset, train it using the standard training script:
 
 ```bash
 python -m src.train
@@ -95,16 +107,6 @@ Use the prediction script:
 ```bash
 python -m src.predict
 ```
-
-### Running the Web Application
-
-Start the Flask web server:
-
-```bash
-python webapp/app.py
-```
-
-Then open your browser and navigate to `http://localhost:5000`
 
 ## Configuration
 
