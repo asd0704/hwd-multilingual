@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayResult(data) {
         // Expected data: { label: "HATE" | "NOT HATE", probability: 0.95 }
-        
+
         const isHate = data.label === 'HATE';
         const probPercentage = (data.probability * 100).toFixed(1);
 
@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update probability text
         predictionProb.textContent = `${probPercentage}%`;
-        
+
         // Update progress bar
         confidenceFill.style.backgroundColor = isHate ? HATE_COLOR : OK_COLOR;
-        
+
         // Reveal container and animate bar
         resultContainer.classList.remove('hidden');
-        
+
         // Small delay to ensure CSS transition fires since element just became visible
         setTimeout(() => {
             confidenceFill.style.width = `${probPercentage}%`;
